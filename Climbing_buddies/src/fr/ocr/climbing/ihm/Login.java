@@ -45,7 +45,7 @@ public class Login extends HttpServlet {
 			
 			HttpSession session = request.getSession( true );
 			session.setAttribute( "connectedUser", connectedUser );
-			request.getRequestDispatcher( "/Connected.jsp" ).forward( request, response );
+			request.getRequestDispatcher( "/ViewTopo.jsp" ).forward( request, response );
 		
 		} else {
 		

@@ -11,3 +11,15 @@ label {
 	width: 120px;
 	text-align: left;
 }
+body {
+    text-align: center;
+	
+}
+
+
+
+
+.errorMessage {
+    font-weight: bold;
+    color: red;	
+}

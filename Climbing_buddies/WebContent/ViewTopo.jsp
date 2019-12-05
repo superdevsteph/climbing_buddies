@@ -7,17 +7,17 @@
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 	</head>
 	<body>
-        <h1>View topo - ${connectedUser.login}</h1>
+        <h1>Les Topos - ${connectedUser.login}</h1>
 	    <br/>
 	   
         Identifier: ${TopocatalogBrowser.currentTopo.topo_id} <br/>
-        Nom: ${catalogBrowser.currentTopo.topo_nom} <br/>	
-        Région: ${catalogBrowser.currentTopo.topo_region} <br/>
-        Sites price: ${catalogBrowser.currentTopo.topo_nbSites} <br/>
-        Secteurs: ${catalogBrowser.currentTopo.topo_nbSecteurs} <br/>
-        Voies price: ${catalogBrowser.currentTopo.topo_nbVoies} <br/>
-        Disponibilité: ${catalogBrowser.currentTopo.topo_disponible} <br/>
-       Description: ${catalogBrowser.currentTopo.topo_description} <br/>
+        Nom: ${TopocatalogBrowser.currentTopo.topo_nom} <br/>	
+        Région: ${TopocatalogBrowser.currentTopo.topo_region} <br/>
+        Sites : ${TopocatalogBrowser.currentTopo.topo_nbSites} <br/>
+        Secteurs: ${TopocatalogBrowser.currentTopo.topo_nbSecteurs} <br/>
+        Voies : ${TopocatalogBrowser.currentTopo.topo_nbVoies} <br/>
+        Disponibilité: ${TopocatalogBrowser.currentTopo.topo_disponible} <br/>
+       Description: ${TopocatalogBrowser.currentTopo.topo_description} <br/>
        
         <br/>
         
@@ -29,7 +29,7 @@
             <input name="btnNext" type="submit" value="Next" />
         </form>  <br/>
         
-        ${TopocatalogBrowser.shoppingCartSize} topo<c:if test="${TopocatalogBrowser.shoppingCartSize gt 1}">s</c:if> in the shopping cart.<br/>
+        ${topoCatalogBrowser.shoppingCartSize} topo(s) in the shopping cart.<br/>
         <a href="summary">View the shopping cart</a>
 	</body>
 </html>

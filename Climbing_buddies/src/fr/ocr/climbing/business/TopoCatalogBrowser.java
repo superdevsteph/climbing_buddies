@@ -20,7 +20,7 @@ public class TopoCatalogBrowser {
 		currentTopo = TopoDAO.getTopoById( currentPosition );
 	}
 	
-	public Topo getCurrentArticle() {
+	public Topo getCurrentTopo() {
 		return currentTopo;
 	}
 

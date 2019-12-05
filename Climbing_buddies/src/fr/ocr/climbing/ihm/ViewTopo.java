@@ -26,7 +26,7 @@ public class ViewTopo extends HttpServlet {
 			return;
 		}
 		
-		request.getRequestDispatcher( "/viewTopo.jsp" ).forward( request, response );
+		request.getRequestDispatcher( "/ViewTopo.jsp" ).forward( request, response );
 	}
 	
 	@Override
@@ -37,7 +37,7 @@ public class ViewTopo extends HttpServlet {
 			return;
 		}
 
-		TopoCatalogBrowser browser = (TopoCatalogBrowser) session.getAttribute( "TopocatalogBrowser" );
+		TopoCatalogBrowser browser = (TopoCatalogBrowser) session.getAttribute( "topoCatalogBrowser" );
 		
 		if ( request.getParameter( "btnPrevious" ) != null ) {
 			browser.goPrevious();
@@ -47,7 +47,7 @@ public class ViewTopo extends HttpServlet {
 			browser.addCurrentTopo();
 		}
 		
-		request.getRequestDispatcher( "/viewTopo.jsp" ).forward( request, response );
+		request.getRequestDispatcher( "/ViewTopo.jsp" ).forward( request, response );
 	}
 	
 }
