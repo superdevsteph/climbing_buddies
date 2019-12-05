@@ -7,17 +7,20 @@
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 	</head>
 	<body>
-        <h1>Les Topos - ${connectedUser.login}</h1>
+        <h1>Les Topos</h1>
+        
+        <p>Bonjour ${connectedUser.login} !</p>
+        
 	    <br/>
 	   
-        Identifier: ${TopocatalogBrowser.currentTopo.topo_id} <br/>
-        Nom: ${TopocatalogBrowser.currentTopo.topo_nom} <br/>	
-        Région: ${TopocatalogBrowser.currentTopo.topo_region} <br/>
-        Sites : ${TopocatalogBrowser.currentTopo.topo_nbSites} <br/>
-        Secteurs: ${TopocatalogBrowser.currentTopo.topo_nbSecteurs} <br/>
-        Voies : ${TopocatalogBrowser.currentTopo.topo_nbVoies} <br/>
-        Disponibilité: ${TopocatalogBrowser.currentTopo.topo_disponible} <br/>
-       Description: ${TopocatalogBrowser.currentTopo.topo_description} <br/>
+        Identifier: ${topoCatalogBrowser.currentTopo.topo_id} <br/>
+        Nom: ${topoCatalogBrowser.currentTopo.topo_nom} <br/>	
+        Région: ${topoCatalogBrowser.currentTopo.topo_region} <br/>
+        Sites : ${topoCatalogBrowser.currentTopo.topo_nbSites} <br/>
+        Secteurs: ${topoCatalogBrowser.currentTopo.topo_nbSecteurs} <br/>
+        Voies : ${topoCatalogBrowser.currentTopo.topo_nbVoies} <br/>
+        Disponibilité: ${topoCatalogBrowser.currentTopo.topo_disponible} <br/>
+       Description: ${topoCatalogBrowser.currentTopo.topo_description} <br/>
        
         <br/>
         

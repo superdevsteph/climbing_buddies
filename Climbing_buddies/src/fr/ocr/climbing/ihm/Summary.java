@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet( urlPatterns="/summary") 
+@WebServlet("/summary") 
 public class Summary extends HttpServlet {
 
 	private static final long serialVersionUID = -1204635336479052777L;
@@ -23,7 +23,7 @@ public class Summary extends HttpServlet {
 			return;
 		}
 		
-		request.getRequestDispatcher( "/summary.jsp" ).forward( request, response );
+		request.getRequestDispatcher( "/Summary.jsp" ).forward( request, response );
 	}
 	
 }
