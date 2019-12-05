@@ -14,7 +14,7 @@ public class LifeCycleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
-	private String dbURL;
+	private String databaseURL;
 	private int counter;
 
 	public LifeCycleServlet() {
@@ -26,8 +26,8 @@ public class LifeCycleServlet extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		dbURL = this.getServletContext().getInitParameter("JDBC_URL");
-		System.out.println("in init " + dbURL);
+		databaseURL = this.getServletContext().getInitParameter("DATABASE_URL");
+		System.out.println("in init " + databaseURL);
 		counter = 0;
 
 	}

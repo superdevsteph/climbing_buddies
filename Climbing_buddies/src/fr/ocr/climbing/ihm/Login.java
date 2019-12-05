@@ -8,45 +8,52 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/login")
+import fr.ocr.climbing.business.User;
+import fr.ocr.climbing.dao.DAOContext;
+import fr.ocr.climbing.dao.UserDAO;
+
+/**
+ * Servlet implementation class Login
+ */
+@WebServlet(urlPatterns="/login", loadOnStartup=1)
 public class Login extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-       
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        String login = request.getParameter( "txtLogin" );
-        String password = request.getParameter( "txtPassword" );
-        if ( login == null ) login = "";
-        if ( password == null ) password = "";
-        
-        HttpSession session = request.getSession( true );
-        session.setAttribute( "login", login );
-        session.setAttribute( "password", password );
-        
-        request.getRequestDispatcher( "/Login.jsp" ).forward( request, response );
-    }
+	
+	private static final long serialVersionUID = -4319076288258537575L;
 
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+	@Override
+	public void init() throws ServletException {
+		DAOContext.init( this.getServletContext() );
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute( "login", "" );
+		request.setAttribute( "password", "" );
+		request.setAttribute( "errorMessage", "" );
+		request.getRequestDispatcher( "/Login.jsp" ).forward( request, response );
+	}
 
-        String login = request.getParameter( "txtLogin" );
-        String password = request.getParameter( "txtPassword" );
-
-        HttpSession session = request.getSession( true );
-        session.setAttribute( "login", login );
-        session.setAttribute( "password", password );
-
-        System.out.println( "in the doPost" );
-        
-        if ( login.equals( "bond" ) && password.equals( "007" ) ) {
-            session.setAttribute( "isConnected", true );
-            request.getRequestDispatcher( "/Connected.jsp" ).forward( request, response );
-        } else {
-            session.setAttribute( "isConnected", false );
-            request.getRequestDispatcher( "/Login.jsp" ).forward( request, response );
-        }
-    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String login = request.getParameter( "txtLogin" );
+		String password = request.getParameter( "txtPassword" );
+		
+		request.setAttribute( "login", login );
+		request.setAttribute( "password", password );
+		
+		User connectedUser = UserDAO.isValidLogin( login, password );
+		if ( connectedUser != null ) {
+			
+			HttpSession session = request.getSession( true );
+			session.setAttribute( "connectedUser", connectedUser );
+			request.getRequestDispatcher( "/Connected.jsp" ).forward( request, response );
+		
+		} else {
+		
+			request.setAttribute( "errorMessage", "Bad identity" );			
+			request.getRequestDispatcher( "/Login.jsp" ).forward( request, response );
+			
+		}
+		
+	}
 
 }

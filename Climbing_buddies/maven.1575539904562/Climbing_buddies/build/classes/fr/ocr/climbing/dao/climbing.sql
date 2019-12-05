@@ -26,13 +26,7 @@ CREATE TABLE tb_user(
 
 
 INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_profil) 
-VALUES (1, 'stephmehraik', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password', 'admin');
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_profil) 
-VALUES (2, 'steph', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password', 'admin');
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_profil) 
-VALUES (3, 'bond', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', '007', 'admin');
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_profil) 
-VALUES (4, 'bla', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'bla', 'admin');
+VALUES (4, 'stephmehraik', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password', 'admin');
 
 
 

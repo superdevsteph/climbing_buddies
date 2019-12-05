@@ -1,22 +1,30 @@
-<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Authentification</title>
-        <link rel='stylesheet' type='text/css' href='styles.css' />
-    </head>
-    <body>
-        <h1>Veuillez vous authentifier</h1>
-    
-        <form method="post" action="login">
-            <label for='txtLogin'>Login :</label>
-            <input id='txtLogin' name='txtLogin' type='text' value='${login}' autofocus /> <br/>
-            <label for='txtPassword'>Password :</label>
-            <input name='txtPassword' type='password' value='${password}' /> <br/>
-            <br/>
-            <input name='btnConnect' type='submit' /> <br/>
-        </form>     
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Login screen</title>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+	</head>
+	<body>
+        <h1>Login screen</h1>
+	
+	    <form method="post" action="login">
+
+	        Login: 
+	        <input name="txtLogin" value="${login}" autofocus />
+	        <br/>
+
+            Password: 
+            <input name="txtPassword" type="password" value="${password}" />
+            <br/> <br/>
+	        
+	        <input type="submit" value="Connect" />
+	        <br/><br/>
+	        
+            <div class="errorMessage">${errorMessage}</div>
+            
+	    </form>
+	    	
+	</body>
 </html>

@@ -8,7 +8,7 @@
         <link rel='stylesheet' type='text/css' href='styles.css' />
     </head>
     <body>
-        <h1>Welcome - ${connectedUser.login}</h1>
+        <h1>Welcome</h1>
     
         <p>Welcome M. ${login}</p>
     </body>
