@@ -16,7 +16,6 @@ CREATE TABLE tb_user(
 	user_email VARCHAR(30) NOT NULL,
 	user_password VARCHAR(60) NOT NULL,
 	user_cotation VARCHAR(15),
-	user_profil VARCHAR(15) NOT NULL,
 	adresse_adresse1 VARCHAR(30),
 	adresse_adresse2 VARCHAR(30),
 	adresse_codePostal VARCHAR(10),
@@ -25,14 +24,24 @@ CREATE TABLE tb_user(
 )ENGINE = InnoDB;
 
 
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_profil) 
-VALUES (1, 'stephmehraik', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password', 'admin');
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_profil) 
-VALUES (2, 'steph', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password', 'admin');
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_profil) 
-VALUES (3, 'bond', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', '007', 'admin');
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_profil) 
-VALUES (4, 'bla', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'bla', 'admin');
+INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password) 
+VALUES (1, 'stephmehraik', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password');
+INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password) 
+VALUES (2, 'steph', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password');
+INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password) 
+VALUES (3, 'bond', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', '007');
+INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password) 
+VALUES (4, 'bla', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'bla');
+
+
+
+CREATE TABLE tb_admin (
+	user_id				int(4)		NOT NULL REFERENCES tb_user(user_id),
+	Rights				varchar(10) NOT NULL
+) ENGINE = InnoDB;
+
+INSERT INTO tb_admin VALUES ( 1, "-RWX------" );
+INSERT INTO tb_admin VALUES ( 5, "-RWX------" );
 
 
 
@@ -51,6 +60,11 @@ CREATE TABLE tb_topo (
 	topo_lastUpdate TIMESTAMP,
 	topo_publication boolean
 );
+
+INSERT INTO `climbing_buddy`.`tb_topo` (`topo_id`, `topo_nom`, `topo_region`, `topo_nbSites`, `topo_nbSecteurs`, `topo_nbVoies`, `topo_disponible`, `topo_description`, `topo_user_fk_id`) VALUES ('1', 'Topo1', 'bla', '4', '4564', '4564', '0', 'premier topo', '1');
+INSERT INTO `climbing_buddy`.`tb_topo` (`topo_id`, `topo_nom`, `topo_region`, `topo_nbSites`, `topo_nbSecteurs`, `topo_nbVoies`, `topo_disponible`, `topo_description`, `topo_user_fk_id`) VALUES ('2', 'Topo2', 'bla', '4', '4564', '4564', '0', 'deuxieme topo', '2');
+
+
 
 CREATE TABLE tb_site (
   site_id INT(4) PRIMARY KEY AUTO_INCREMENT,
