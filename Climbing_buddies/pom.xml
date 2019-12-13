@@ -52,28 +52,28 @@
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-core</artifactId>
-          <version>4.2.5.RELEASE</version>
+          <version>4.3.17.RELEASE</version>
       </dependency>
  
       <!-- http://mvnrepository.com/artifact/org.springframework/spring-web -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-web</artifactId>
-          <version>4.2.5.RELEASE</version>
+          <version>4.3.17.RELEASE</version>
       </dependency>
  
       <!-- http://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-webmvc</artifactId>
-          <version>4.2.5.RELEASE</version>
+          <version>4.3.17.RELEASE</version>
       </dependency>
  
       <!-- http://mvnrepository.com/artifact/org.springframework/spring-orm -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-orm</artifactId>
-          <version>4.2.5.RELEASE</version>
+          <version>4.3.17.RELEASE</version>
       </dependency>
  
       <!-- Hibernate -->
