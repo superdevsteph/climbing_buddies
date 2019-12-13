@@ -24,14 +24,14 @@ CREATE TABLE tb_user(
 )ENGINE = InnoDB;
 
 
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password) 
-VALUES (1, 'stephmehraik', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password');
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password) 
-VALUES (2, 'steph', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password');
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password) 
-VALUES (3, 'bond', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', '007');
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password) 
-VALUES (4, 'bla', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'bla');
+INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_cotation) 
+VALUES (1, 'stephmehraik', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password', 10);
+INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_cotation) 
+VALUES (2, 'steph', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password', 40);
+INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_cotation) 
+VALUES (3, 'bond', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', '007', 50);
+INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_cotation) 
+VALUES (4, 'bla', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'bla', 12);
 
 
 

@@ -1,4 +1,4 @@
-package fr.ocr.climbing.ihm;
+/*package fr.ocr.climbing.ihm;
 
 
 import java.io.IOException;
@@ -27,3 +27,4 @@ public class Summary extends HttpServlet {
 	}
 	
 }
+*/

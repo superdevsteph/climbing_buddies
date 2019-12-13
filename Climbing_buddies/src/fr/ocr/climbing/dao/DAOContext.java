@@ -1,4 +1,4 @@
-package fr.ocr.climbing.dao;
+/*package fr.ocr.climbing.dao;
 import javax.servlet.ServletContext;
 
 public class DAOContext {
@@ -20,3 +20,4 @@ public class DAOContext {
 	}
 
 }
+*/

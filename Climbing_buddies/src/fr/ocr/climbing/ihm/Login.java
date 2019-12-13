@@ -1,4 +1,4 @@
-package fr.ocr.climbing.ihm;
+/*package fr.ocr.climbing.ihm;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -15,6 +15,7 @@ import fr.ocr.climbing.dao.UserDAO;
 /**
  * Servlet implementation class Login
  */
+/*
 @WebServlet(urlPatterns="/login", loadOnStartup=1)
 public class Login extends HttpServlet {
 	
@@ -57,3 +58,4 @@ public class Login extends HttpServlet {
 	}
 
 }
+*/
