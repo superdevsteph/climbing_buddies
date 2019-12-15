@@ -1,13 +1,7 @@
 package fr.ocr.climbing.controller;
  
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
- 
-import fr.ocr.climbing.dao.UserDAO;
-import fr.ocr.climbing.model.UserInfo;
-import fr.ocr.climbing.validator.UserValidator;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import fr.ocr.climbing.dao.UserDAO;
+import fr.ocr.climbing.model.UserInfo;
+import fr.ocr.climbing.validator.UserValidator;
  
 @Controller
 // Enable Hibernate Transaction.
@@ -49,7 +47,7 @@ public class MyController {
        return "userList";
    }
  
-   private Map<String, String> dataForLogins() {
+ /*  private Map<String, String> dataForLogins() {
        Map<String, String> loginMap = new LinkedHashMap<String, String>();
        loginMap.put("Developer", "Developer");
        loginMap.put("Leader", "Leader");
@@ -64,18 +62,19 @@ public class MyController {
        list.add("C#");
        return list;
    }
+  */
  
    private String formUser(Model model, UserInfo userInfo) {
        model.addAttribute("userForm", userInfo);
- 
+ /*
        Map<String, String> loginMap = this.dataForLogins();
  
        model.addAttribute("loginMap", loginMap);
  
        List<String> list = dataForCotation();
        model.addAttribute("cotation", list);
- 
-       if (userInfo.getId() == null) {
+ */
+       if (userInfo.getId() == 0) {
            model.addAttribute("formTitle", "Create User");
        } else {
            model.addAttribute("formTitle", "Edit User");
@@ -93,9 +92,9 @@ public class MyController {
    }
  
    @RequestMapping("/editUser")
-   public String editUser(Model model, @RequestParam("id") String id) {
+   public String editUser(Model model, @RequestParam("id") int id) {
        UserInfo userInfo = null;
-       if (id != null) {
+       if (id != 0) {
            userInfo = this.userDAO.findUserInfo(id);
        }
        if (userInfo == null) {
@@ -106,8 +105,8 @@ public class MyController {
    }
  
    @RequestMapping("/deleteUser")
-   public String deleteUser(Model model, @RequestParam("id") String id) {
-       if (id != null) {
+   public String deleteUser(Model model, @RequestParam("id") int id) {
+       if (id != 0) {
            this.userDAO.deleteUser(id);
        }
        return "redirect:/userList";

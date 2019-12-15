@@ -11,11 +11,11 @@ CREATE TABLE tb_user(
 	user_id INT(4) PRIMARY KEY AUTO_INCREMENT,
 	user_login VARCHAR(40) NOT NULL,
 	user_nom VARCHAR(15) NOT NULL,
-	user_prenom VARCHAR(15) NOT NULL,
+	user_prenom VARCHAR(15),
 	user_dateNaissance DATE,
 	user_email VARCHAR(30) NOT NULL,
 	user_password VARCHAR(60) NOT NULL,
-	user_cotation VARCHAR(15),
+	user_cotation VARCHAR(15)NOT NULL,
 	adresse_adresse1 VARCHAR(30),
 	adresse_adresse2 VARCHAR(30),
 	adresse_codePostal VARCHAR(10),
@@ -24,14 +24,14 @@ CREATE TABLE tb_user(
 )ENGINE = InnoDB;
 
 
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_cotation) 
-VALUES (1, 'stephmehraik', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password', 10);
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_cotation) 
-VALUES (2, 'steph', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'password', 40);
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_cotation) 
-VALUES (3, 'bond', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', '007', 50);
-INSERT INTO tb_user (user_id, user_login, user_nom, user_prenom, user_email, user_password, user_cotation) 
-VALUES (4, 'bla', 'Mehraik', 'Stéphanie', 'stephanie.mehraik@gmail.com', 'bla', 12);
+INSERT INTO tb_user (user_id, user_login, user_nom, user_email, user_password, user_cotation) 
+VALUES (1, 'stephmehraik', 'Mehraik', 'stephanie.mehraik@gmail.com', 'password', 10);
+INSERT INTO tb_user (user_id, user_login, user_nom, user_email, user_password, user_cotation) 
+VALUES (2, 'steph', 'Mehraik', 'stephanie.mehraik@gmail.com', 'password', 40);
+INSERT INTO tb_user (user_id, user_login, user_nom, user_email, user_password, user_cotation) 
+VALUES (3, 'bond', 'Mehraik', 'stephanie.mehraik@gmail.com', '007', 50);
+INSERT INTO tb_user (user_id, user_login, user_nom, user_email, user_password, user_cotation) 
+VALUES (4, 'bla', 'Mehraik', 'stephanie.mehraik@gmail.com', 'bla', 12);
 
 
 

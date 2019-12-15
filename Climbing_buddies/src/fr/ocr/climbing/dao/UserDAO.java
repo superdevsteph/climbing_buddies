@@ -7,14 +7,14 @@ import fr.ocr.climbing.model.UserInfo;
 
 public interface UserDAO {
 
-	public User findUser(String id);
+	public User findUser(int id);
 
 	public List<UserInfo> listUserInfos();
 
 	public void saveUser(UserInfo userInfo);
 
-	public UserInfo findUserInfo(String id);
+	public UserInfo findUserInfo(int id);
 
-	public void deleteUser(String id);
+	public void deleteUser(int id);
 
 }

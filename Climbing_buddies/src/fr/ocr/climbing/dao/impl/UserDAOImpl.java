@@ -19,7 +19,7 @@ public class UserDAOImpl implements UserDAO {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public User findUser(String id) {
+	public User findUser(int id) {
 		Session session = sessionFactory.getCurrentSession();
 		Criteria crit = session.createCriteria(User.class);
 		crit.add(Restrictions.eq("id", id));
@@ -27,7 +27,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public UserInfo findUserInfo(String id) {
+	public UserInfo findUserInfo(int id) {
 		User User = this.findUser(id);
 		if (User == null) {
 			return null;
@@ -48,9 +48,9 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public void saveUser(UserInfo UserInfo) {
-		String id = UserInfo.getId();
+		int id = UserInfo.getId();
 		User User = null;
-		if (id != null) {
+		if (id != 0) {
 			User = this.findUser(id);
 		}
 		boolean isNew = false;
@@ -74,7 +74,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void deleteUser(String id) {
+	public void deleteUser(int id) {
 		User User = this.findUser(id);
 		if (User != null) {
 			this.sessionFactory.getCurrentSession().delete(User);

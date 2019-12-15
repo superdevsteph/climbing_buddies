@@ -2,7 +2,7 @@ package fr.ocr.climbing.model;
 
 public class UserInfo {
  
-    private String id;
+    private int id;
     private String name;
     private String email;
  
@@ -17,7 +17,7 @@ public class UserInfo {
  
     // Do not change this constructor,
     // it is used in the Hibernate Query
-    public UserInfo(String id, String name, String email, String login, String password, String cotation) {
+    public UserInfo(int id, String name, String email, String login, String password, String cotation) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -30,11 +30,11 @@ public class UserInfo {
  
    
  
-    public String getId() {
+    public int getId() {
         return id;
     }
  
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
  

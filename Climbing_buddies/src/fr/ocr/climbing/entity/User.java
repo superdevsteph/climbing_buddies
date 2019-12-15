@@ -5,6 +5,8 @@ import java.io.Serializable;
  
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
  
@@ -13,7 +15,7 @@ import javax.persistence.Table;
 public class User implements Serializable {
  
    private static final long serialVersionUID = -7893237204476214050L;
-   private String id;
+   private int id;
    private String name;
    private String email;
  
@@ -22,12 +24,13 @@ public class User implements Serializable {
    private String cotation;
  
    @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY )
    @Column(name = "user_id", length = 50, nullable = false)
-   public String getId() {
+   public int getId() {
        return id;
    }
  
-   public void setId(String id) {
+   public void setId(int id) {
        this.id = id;
    }
  
