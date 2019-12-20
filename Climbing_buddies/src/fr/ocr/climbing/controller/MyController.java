@@ -71,7 +71,7 @@ public class MyController {
 		return "formUser";
 	}
 
-	@RequestMapping("/createUser")
+	@RequestMapping("/formUser")
 	public String createUser(Model model) {
 
 		UserInfo userInfo = new UserInfo();

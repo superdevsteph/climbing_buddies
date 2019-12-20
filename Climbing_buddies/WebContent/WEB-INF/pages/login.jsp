@@ -55,12 +55,12 @@
 						  </div>
   </div>
 						</section>
-<section class="my-5">
-		<div class="container-fluid">
-			<div class="row">
+<section class="my-5 ">
+		<div class="container">
+			<div class="row  ">
 
     <form method="POST" action="${contextPath}/login" class="form-signin">
-        <h2 class="form-heading">Log in</h2>
+        <h2 class="form-heading text-primary ">Log in</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
