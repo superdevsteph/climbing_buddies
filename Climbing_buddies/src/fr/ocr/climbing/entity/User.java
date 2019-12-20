@@ -2,39 +2,36 @@ package fr.ocr.climbing.entity;
 
 
 import java.io.Serializable;
- 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+import java.util.Set;
+
  
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
  
    private static final long serialVersionUID = -7893237204476214050L;
-   private int id;
+   private Long id;
    private String name;
    private String email;
- 
    private String login;
    private String password;
    private String cotation;
- 
+   private Set<Role> roles;
+   
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY )
    @Column(name = "user_id", length = 50, nullable = false)
-   public int getId() {
+   public Long getId() {
        return id;
    }
  
-   public void setId(int id) {
+   public void setId(Long id) {
        this.id = id;
    }
  
-   @Column(name = "user_nom", length = 50, nullable = false)
+   @Column(name = "user_name", length = 50, nullable = false)
    public String getName() {
        return name;
    }
@@ -60,7 +57,9 @@ public class User implements Serializable {
    public void setPassword(String password) {
        this.password = password;
    }
- 
+   
+
+   
    @Column(name = "user_email", length = 50, nullable = false)
    public String getEmail() {
        return email;
@@ -77,5 +76,14 @@ public class User implements Serializable {
  
    public void setCotation(String cotation) {
        this.cotation = cotation;
+   }
+   @ManyToMany
+   @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+   public Set<Role> getRoles() {
+       return roles;
+   }
+
+   public void setRoles(Set<Role> roles) {
+       this.roles = roles;
    }
 }

@@ -38,7 +38,7 @@ public class ApplicationContextConfig {
  public ResourceBundleMessageSource messageSource() {
      ResourceBundleMessageSource rb = new ResourceBundleMessageSource();
      // Load property in message/validator.properties
-     rb.setBasenames(new String[] { "messages/validator"});
+     rb.setBasenames(new String[] { "/WEB-INF/messages/validator"});
      return rb;
  }
  
@@ -75,7 +75,7 @@ public class ApplicationContextConfig {
       
  
      LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
-     factoryBean.setPackagesToScan(new String[] { "fr.ocr.climbing.entity" });
+     factoryBean.setPackagesToScan(new String[] { "fr.ocr.climbing" });
      factoryBean.setDataSource(dataSource);
      factoryBean.setHibernateProperties(properties);
      factoryBean.afterPropertiesSet();

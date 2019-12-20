@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import fr.ocr.climbing.dao.UserDAO;
 import fr.ocr.climbing.entity.User;
 import fr.ocr.climbing.model.UserInfo;
+;
 
 public class UserDAOImpl implements UserDAO {
 
@@ -19,7 +20,7 @@ public class UserDAOImpl implements UserDAO {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public User findUser(int id) {
+	public User findUser(Long id) {
 		Session session = sessionFactory.getCurrentSession();
 		Criteria crit = session.createCriteria(User.class);
 		crit.add(Restrictions.eq("id", id));
@@ -27,7 +28,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public UserInfo findUserInfo(int id) {
+	public UserInfo findUserInfo(Long id) {
 		User User = this.findUser(id);
 		if (User == null) {
 			return null;
@@ -37,10 +38,11 @@ public class UserDAOImpl implements UserDAO {
 				User.getPassword(), User.getCotation());
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<UserInfo> listUserInfos() {
 		String sql = "Select new " + UserInfo.class.getName()//
-				+ "(a.id, a.name, a.email, a.login, a.password, a.cotation) "//
+				+ "(a.id, a.name, a.email, a.login, a.password,  a.cotation) "//
 				+ " from " + User.class.getName() + " a ";
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery(sql);
@@ -48,9 +50,9 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public void saveUser(UserInfo UserInfo) {
-		int id = UserInfo.getId();
+		Long id = UserInfo.getId();
 		User User = null;
-		if (id != 0) {
+		if (id != null) {
 			User = this.findUser(id);
 		}
 		boolean isNew = false;
@@ -74,7 +76,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void deleteUser(int id) {
+	public void deleteUser(Long id) {
 		User User = this.findUser(id);
 		if (User != null) {
 			this.sessionFactory.getCurrentSession().delete(User);

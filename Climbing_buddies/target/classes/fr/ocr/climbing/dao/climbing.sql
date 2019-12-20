@@ -8,30 +8,53 @@ show DATABASES;
 
 
 CREATE TABLE tb_user(
-	user_id INT(4) PRIMARY KEY AUTO_INCREMENT,
+	user_id INT PRIMARY KEY AUTO_INCREMENT,
 	user_login VARCHAR(40) NOT NULL,
-	user_nom VARCHAR(15) NOT NULL,
-	user_prenom VARCHAR(15),
-	user_dateNaissance DATE,
+	user_name VARCHAR(15) NOT NULL,
+	user_firstname VARCHAR(15),
+	user_birthdate DATE,
 	user_email VARCHAR(30) NOT NULL,
 	user_password VARCHAR(60) NOT NULL,
 	user_cotation VARCHAR(15)NOT NULL,
-	adresse_adresse1 VARCHAR(30),
-	adresse_adresse2 VARCHAR(30),
-	adresse_codePostal VARCHAR(10),
-	adresse_ville VARCHAR(20),
-	adresse_pays VARCHAR(20)
+	adresse_adress1 VARCHAR(30),
+	adresse_adress2 VARCHAR(30),
+	adresse_postalCode VARCHAR(10),
+	adresse_city VARCHAR(20),
+	adresse_country VARCHAR(20)
 )ENGINE = InnoDB;
 
 
-INSERT INTO tb_user (user_id, user_login, user_nom, user_email, user_password, user_cotation) 
+INSERT INTO tb_user (user_id, user_login, user_name, user_email, user_password, user_cotation) 
 VALUES (1, 'stephmehraik', 'Mehraik', 'stephanie.mehraik@gmail.com', 'password', 10);
-INSERT INTO tb_user (user_id, user_login, user_nom, user_email, user_password, user_cotation) 
+INSERT INTO tb_user (user_id, user_login, user_name, user_email, user_password, user_cotation) 
 VALUES (2, 'steph', 'Mehraik', 'stephanie.mehraik@gmail.com', 'password', 40);
-INSERT INTO tb_user (user_id, user_login, user_nom, user_email, user_password, user_cotation) 
+INSERT INTO tb_user (user_id, user_login, user_name, user_email, user_password, user_cotation) 
 VALUES (3, 'bond', 'Mehraik', 'stephanie.mehraik@gmail.com', '007', 50);
-INSERT INTO tb_user (user_id, user_login, user_nom, user_email, user_password, user_cotation) 
+INSERT INTO tb_user (user_id, user_login, user_name, user_email, user_password, user_cotation) 
 VALUES (4, 'bla', 'Mehraik', 'stephanie.mehraik@gmail.com', 'bla', 12);
+
+CREATE TABLE `tb_role` (
+  `role_id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `role`
+--
+
+LOCK TABLES `tb_role` WRITE;
+INSERT INTO `tb_role` VALUES (1,'ROLE_USER');
+UNLOCK TABLES;
+
+CREATE TABLE `user_role` (
+  `user_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`,`role_id`),
+  KEY `fk_user_role_roleid_idx` (`role_id`),
+  CONSTRAINT `fk_user_role_roleid` FOREIGN KEY (`role_id`) REFERENCES `tb_role` (`role_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_user_role_userid` FOREIGN KEY (`user_id`) REFERENCES `tb_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
