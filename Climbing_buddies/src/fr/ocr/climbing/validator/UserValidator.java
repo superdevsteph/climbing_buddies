@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-
 import fr.ocr.climbing.model.UserInfo;
  
 @Component
@@ -32,9 +31,10 @@ public class UserValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty.userForm.password");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cotation", "NotEmpty.userForm.cotation");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "NotEmpty");
-        if (!userInfo.getPasswordConfirm().equals(userInfo.getPassword())) {
-            errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
+     /*   if (!userInfo.getPasswordConfirm().equals(userInfo.getPassword())) {
+           errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
         }
+        */
         if(!emailValidator.isValid(userInfo.getEmail())) {
             // Error in email field.
             errors.rejectValue("email", "Pattern.userForm.email");

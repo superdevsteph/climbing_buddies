@@ -1,11 +1,11 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>User List</title>
+	<title>Les amis de l'escalade</title>
 	<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
 <header>
@@ -52,8 +52,11 @@
 								un utilisateur</a>
 						</div>
 
+					<div class="col-2">
+							<a href="${pageContext.request.contextPath}/home">Se
+								déconnecter</a>
+						</div>
 					</div>
-
 				</div>
 
 			</div>

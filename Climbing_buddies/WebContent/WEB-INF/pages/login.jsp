@@ -54,12 +54,14 @@
 						</div>
 						  </div>
   </div>
+						  </div>
+  </div>
 						</section>
 <section class="my-5 ">
 		<div class="container">
 			<div class="row  ">
 
-    <form method="POST" action="${contextPath}/login" class="form-signin">
+    <form class="col-lg-7"method="POST" action="${contextPath}/login" class="form-signin">
         <h2 class="form-heading text-primary ">Log in</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
@@ -70,6 +72,7 @@
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+            <br>
             <h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4>
         </div>
 

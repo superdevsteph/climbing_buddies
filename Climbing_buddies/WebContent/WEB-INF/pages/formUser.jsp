@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -8,7 +8,7 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Login</title>
+	<title>Créer un utilisateur</title>
 	<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
 <header>
@@ -23,7 +23,7 @@
 		<div class="d-flex h-100 text-center align-items-center">
 			<div class="w-100 text-white">
 				<h1 class="display-3">Les amis de l'escalade</h1>
-				<p class="lead mb-0">coucou</p>
+				<p class="lead mb-0">Ajoutez un utilisateur</p>
 			</div>
 		</div>
 	</div>
@@ -50,7 +50,7 @@
 							<a href="${pageContext.request.contextPath}/userList">Liste
 								des utilisateurs</a>
 						</div>
-
+	</div>
 						<h3>${formTitle}</h3>
 
 						<form:form action="saveUser" method="POST"
@@ -99,7 +99,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		
 	</section>
 </body>
 </html>

@@ -38,7 +38,7 @@ public class ApplicationContextConfig {
  public ResourceBundleMessageSource messageSource() {
      ResourceBundleMessageSource rb = new ResourceBundleMessageSource();
      // Load property in message/validator.properties
-     rb.setBasenames(new String[] { "/WEB-INF/messages/validator"});
+     rb.setBasenames(new String[] { "classpath:message/validator"});
      return rb;
  }
  

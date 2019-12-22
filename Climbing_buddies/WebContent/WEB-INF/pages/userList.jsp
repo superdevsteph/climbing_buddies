@@ -5,7 +5,7 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>User List</title>
+	<title>Liste des utilisateurs</title>
 	<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
 <header>
@@ -17,7 +17,7 @@
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
         <h1 class="display-3">Les amis de l'escalade</h1>
-        <p class="lead mb-0">coucou</p>
+        <p class="lead mb-0">Liste des utilisateurs</p>
       </div>
     </div>
   </div>

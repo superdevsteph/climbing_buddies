@@ -9,7 +9,7 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Login</title>
+	<title>Créer un compte</title>
 	<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
 <header>
@@ -24,7 +24,7 @@
 		<div class="d-flex h-100 text-center align-items-center">
 			<div class="w-100 text-white">
 				<h1 class="display-3">Les amis de l'escalade</h1>
-				<p class="lead mb-0">Vous pouvez vous authentifier ici</p>
+				<p class="lead mb-0">Créez votre compte</p>
 			</div>
 		</div>
 	</div>
@@ -36,19 +36,19 @@
 
 				<div class="container">
 					<div class="row">
-						<div class="col-2">
+						<div class="col-3">
 							<a href="${pageContext.request.contextPath}/home">Accueil</a>
 						</div>
-						<div class="col-2">
+						<div class="col-3">
 							<a href="${pageContext.request.contextPath}/login">Login</a>
 						</div>
 
-						<div class="col-2">
+						<div class="col-3">
 							<a href="${pageContext.request.contextPath}/userList">Liste
 								des utilisateurs</a>
 						</div>
 
-						<div class="col-2">
+						<div class="col-3">
 							<a href="${pageContext.request.contextPath}/formUser">Créer
 								un utilisateur</a>
 						</div>
@@ -113,11 +113,7 @@
 						</form:form>
 
 					</div>
-					<!-- /container -->
-					<script
-						src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-					<script src="${contextPath}/js/bootstrap.min.js"></script>
-				</div>
+					</div>
 				</section>
 			
 </body>

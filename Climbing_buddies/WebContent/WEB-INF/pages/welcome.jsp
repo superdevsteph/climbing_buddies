@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -49,26 +49,25 @@
 								un utilisateur</a>
 						</div>
 						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/logout">Se
+							<a href="${pageContext.request.contextPath}/home">Se
 								déconnecter</a>
 						</div>
+						
+						
+						<section class="my-5">
 						<h2>
-							Welcome ${user.name} | <a
+							Welcome ${userInfo.getName} | <a
 								onclick="document.forms['logoutForm'].submit()">Logout</a>
 						</h2>
 
 
-						<form id="logoutForm" method="POST" action="${contextPath}/logout">
+						<form id="logoutForm" method="POST" action="${pageContext.request.contextPath}/home">
 							<input type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" />
 						</form>
-
+</section>
 					</div>
-					<!-- /container -->
-					<script
-						src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-					<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
-
+				
 				</div>
 			</div>
 		</div>

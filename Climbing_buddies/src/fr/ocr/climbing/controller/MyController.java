@@ -46,12 +46,7 @@ public class MyController {
 		return "home";
 	}
 
-	@RequestMapping("/logout")
-	public String logout(Model model) {
-
-		return "home";
-	}
-
+	
 	@RequestMapping("/userList")
 	public String userList(Model model) {
 		List<UserInfo> list = userDAO.listUserInfos();
@@ -167,6 +162,21 @@ public class MyController {
 		return "welcome";
 
 	}
+	
+	
+	private String registration(Model model, UserInfo userInfo) {
+		model.addAttribute("userForm", userInfo);
+
+		if (userInfo.getId() == null) {
+			model.addAttribute("formTitle", "Create User");
+		} else {
+			model.addAttribute("formTitle", "Edit User");
+		}
+
+		return "registration";
+	}
+	
+	
 
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
 
@@ -177,24 +187,32 @@ public class MyController {
 		return "registration";
 
 	}
-
-	@RequestMapping(value = "/registration", method = RequestMethod.POST)
-
-	public String registration(@ModelAttribute("userForm") UserInfo userInfo, BindingResult bindingResult,
-			Model model) {
-
-		userValidator.validate(userInfo, bindingResult);
-
-		if (bindingResult.hasErrors()) {
-			return "registration";
-		}
-
-		if (userInfo.getId() == null) {
-			model.addAttribute("formTitle", "Create User");
-		} else {
-			model.addAttribute("formTitle", "Edit User");
-		}
-		return "redirect:/welcome";
-	}
+	
+	
+	
+	// Save or update User
+	   // 1. @ModelAttribute bind form value
+	   // 2. @Validated form validator
+	   // 3. RedirectAttributes for flash value
+	   @RequestMapping(value = "/registration", method = RequestMethod.POST)
+	   public String register(Model model, //
+	           @ModelAttribute("registration") @Validated UserInfo userInfo, //
+	           BindingResult result, //
+	           final RedirectAttributes redirectAttributes) {
+	 
+	    
+	       if (result.hasErrors()) {
+	           return this.registration(model, userInfo);
+	       }
+	 
+	       this.userDAO.saveUser(userInfo);
+	 
+	       // Important!!: Need @EnableWebMvc
+	       // Add message to flash scope
+	       redirectAttributes.addFlashAttribute("message", "Create Account Successful");
+	 
+	       return "redirect:/welcome";
+	 
+}
 
 }
