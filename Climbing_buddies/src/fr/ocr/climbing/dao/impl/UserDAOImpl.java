@@ -12,13 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import fr.ocr.climbing.dao.UserDAO;
 import fr.ocr.climbing.entity.User;
 import fr.ocr.climbing.model.UserInfo;
-;
+
 
 public class UserDAOImpl implements UserDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-
+	 
 	@Override
 	public User findUser(Long id) {
 		Session session = sessionFactory.getCurrentSession();
@@ -29,13 +29,13 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public UserInfo findUserInfo(Long id) {
-		User User = this.findUser(id);
-		if (User == null) {
+		User user = this.findUser(id);
+		if (user == null) {
 			return null;
 		}
-		return new UserInfo(User.getId(), User.getName(), //
-				User.getEmail(), User.getLogin(), //
-				User.getPassword(), User.getCotation());
+		return new UserInfo(user.getId(), user.getName(), //
+				user.getEmail(), user.getLogin(), //
+				user.getPassword(), user.getCotation());
 	}
 
 	@SuppressWarnings("unchecked")
@@ -83,4 +83,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
+	
+	
+ 
 }

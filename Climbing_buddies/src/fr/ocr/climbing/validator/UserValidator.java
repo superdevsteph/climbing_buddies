@@ -30,7 +30,7 @@ public class UserValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "login", "NotEmpty.userForm.login");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty.userForm.password");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cotation", "NotEmpty.userForm.cotation");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "NotEmpty");
+        
      /*   if (!userInfo.getPasswordConfirm().equals(userInfo.getPassword())) {
            errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
         }

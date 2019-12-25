@@ -37,19 +37,19 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-3">
-							<a href="${pageContext.request.contextPath}/home">Accueil</a>
+							<a href="${pageContext.request.contextPath}/home" class="btn btn-primary btn-lg active" role="button">Accueil</a>
 						</div>
 						<div class="col-3">
-							<a href="${pageContext.request.contextPath}/login">Login</a>
+							<a href="${pageContext.request.contextPath}/login" class="btn btn-primary btn-lg active" role="button">Login</a>
 						</div>
 
 						<div class="col-3">
-							<a href="${pageContext.request.contextPath}/userList">Liste
+							<a href="${pageContext.request.contextPath}/userList" class="btn btn-primary btn-lg active" role="button">Liste
 								des utilisateurs</a>
 						</div>
 
 						<div class="col-3">
-							<a href="${pageContext.request.contextPath}/formUser">Créer
+							<a href="${pageContext.request.contextPath}/formUser" class="btn btn-primary btn-lg active" role="button">Créer
 								un utilisateur</a>
 						</div>
 						</div>
@@ -57,18 +57,22 @@
 						</div>
 		</div>
 	</section>
-<section class="my-5 col-12">
+<section class="my-5 col-12 center_div">
 		<div class="container">
 			<div class="row">
-						<form:form method="POST" modelAttribute="userForm"
-							class="form-signin">
+			
+			<form:form class="my-5 center_div col-6 form-signin" action="saveUser" method="POST"
+							modelAttribute="userForm">
+					
+					
 							<h2 class="form-signin-heading text-primary">Create your account</h2>
 
 
 							<table>
 								<tr>
 									<td>Name</td>
-									<td><form:input path="name" /></td>
+									<td><form:input path="name" />
+									</td>
 									<td><form:errors path="name" class="error-message" /></td>
 								</tr>
 								<tr>

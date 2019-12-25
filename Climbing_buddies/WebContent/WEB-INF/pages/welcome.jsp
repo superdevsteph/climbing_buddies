@@ -55,11 +55,16 @@
 						
 						
 						<section class="my-5">
+<c:forEach items="${userInfos}" var="info">
 						<h2>
-							Welcome ${userInfo.getName} | <a
+							Welcome  ${info.name}  | <a
 								onclick="document.forms['logoutForm'].submit()">Logout</a>
 						</h2>
-
+ 
+ 
+   <p> Hello ${info.name}, Bienvenue ! </p>
+    
+ </c:forEach>
 
 						<form id="logoutForm" method="POST" action="${pageContext.request.contextPath}/home">
 							<input type="hidden" name="${_csrf.parameterName}"

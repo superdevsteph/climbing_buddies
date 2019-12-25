@@ -36,10 +36,11 @@ public class ApplicationContextConfig {
  
  @Bean
  public ResourceBundleMessageSource messageSource() {
-     ResourceBundleMessageSource rb = new ResourceBundleMessageSource();
+     ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
      // Load property in message/validator.properties
-     rb.setBasenames(new String[] { "classpath:message/validator"});
-     return rb;
+     messageSource.setBasename("validator");
+     
+     return messageSource;
  }
  
  

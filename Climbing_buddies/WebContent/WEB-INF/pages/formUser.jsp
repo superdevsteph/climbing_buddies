@@ -13,7 +13,7 @@
 </head>
 <header>
 	<div class="overlay"></div>
-	<video playsinline="playsinline" autoplay="autoplay" muted="muted"
+	<video autoplay="autoplay" muted="muted"
 		loop="loop">
 		<source
 			src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
@@ -31,30 +31,30 @@
 <body>
 
 	<section class="my-5">
-		<div class="container-fluid">
+	
 			<div class="row">
 
 				<div class="container">
 					<div class="row">
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/home">Accueil</a>
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/home" class="btn btn-primary btn-lg active" role="button">Accueil</a>
 						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/login">Login</a>
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/login" class="btn btn-primary btn-lg active" role="button">Login</a>
 						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/registration">Créer
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/registration" class="btn btn-primary btn-lg active" role="button">Créer
 								un compte</a>
 						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/userList">Liste
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/userList" class="btn btn-primary btn-lg active" role="button">Liste
 								des utilisateurs</a>
 						</div>
 	</div>
-						<h3>${formTitle}</h3>
 
-						<form:form action="saveUser" method="POST"
+						<form:form class="my-5 center_div col-6" action="saveUser" method="POST"
 							modelAttribute="userForm">
+					<h3>${formTitle}</h3>
 
 							<form:hidden path="id" />
 
@@ -98,7 +98,7 @@
 						</form:form>
 					</div>
 				</div>
-			</div>
+	
 		
 	</section>
 </body>

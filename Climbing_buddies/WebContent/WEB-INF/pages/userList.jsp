@@ -30,27 +30,25 @@
 
 				<div class="container">
 					<div class="row">
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/home">Accueil</a>
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/home" class="btn btn-primary btn-lg active" role="button">Accueil</a>
 						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/login">Login</a>
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/login" class="btn btn-primary btn-lg active" role="button">Login</a>
 						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/registration">Créer
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/registration" class="btn btn-primary btn-lg active" role="button">Créer
 								un compte</a>
 						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/userList">Liste
-								des utilisateurs</a>
-						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/formUser">Créer
+						
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/formUser" class="btn btn-primary btn-lg active" role="button">Créer
 								un utilisateur</a>
 						</div>
 <br/>
  
  
+<section class="my-5 center_div">
 <table border="1">
  <tr>
    <th>Name</th>
@@ -72,13 +70,12 @@
    <td> <a href="deleteUser?id=${info.id}">Delete</a> </td>
    <td> <a href="editUser?id=${info.id}">Edit</a> </td>
  </tr>    
- 
  </c:forEach>
 </table>
-<c:if test="${not empty message}">
-  
+ <br/>
+ 
    <div class="message">${message}</div>
-</c:if>
+</section>
  
  </div>
   </div>

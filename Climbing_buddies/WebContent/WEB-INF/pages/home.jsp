@@ -9,7 +9,7 @@
 	<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
 <header>
-	<div class="overlay"></div>
+	
 	<video playsinline="playsinline" autoplay="autoplay" muted="muted"
 		loop="loop">
 		<source
@@ -33,33 +33,34 @@
 
 				<div class="container">
 					<div class="row">
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/home">Accueil</a>
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/home" class="btn btn-primary btn-lg active" role="button">Accueil</a>
 						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/login">Login</a>
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/login" class="btn btn-primary btn-lg active" role="button">Login</a>
 						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/registration">Créer
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/registration" class="btn btn-primary btn-lg active" role="button">Créer
 								un compte</a>
 						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/userList">Liste
-								des utilisateurs</a>
-						</div>
-						<div class="col-2">
-							<a href="${pageContext.request.contextPath}/formUser">Créer
-								un utilisateur</a>
+						
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/infos" class="btn btn-primary btn-lg active" role="button">A propos de nous</a>
 						</div>
 
-					<div class="col-2">
-							<a href="${pageContext.request.contextPath}/home">Se
-								déconnecter</a>
-						</div>
 					</div>
 				</div>
 
 			</div>
+			
+			<div class="my-5 container">
+			
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta imperdiet ipsum, at sagittis leo hendrerit tempor. Nullam rutrum consectetur velit, sit amet auctor mi commodo eget. Etiam et augue felis. Nunc eros massa, mollis non consequat lobortis, accumsan vel nulla. Morbi id nunc ut neque mattis maximus vitae nec dui. Donec eu consectetur sapien. Aenean pulvinar ante vitae condimentum imperdiet. Duis sit amet fermentum nunc, at ornare nibh.
+
+Nunc id dui porttitor, congue purus ac, fermentum orci. Ut dictum facilisis mauris, et iaculis nisl imperdiet id. Aliquam sit amet nulla vehicula, tempor velit nec, volutpat lorem. Proin consequat, ex ut luctus pretium, odio tortor scelerisque eros, sollicitudin aliquam urna urna id velit. Integer at orci semper, ullamcorper massa a, posuere enim. Nam vitae dolor tortor. Integer semper leo at neque blandit tempor. Morbi nec justo a neque malesuada laoreet. Aliquam feugiat quam eu enim efficitur vestibulum. Vivamus nec dui magna. Donec id dictum dolor. Mauris tincidunt vulputate nisl, quis commodo ipsum tristique a. Curabitur magna risus, fermentum id luctus vitae, porta et dolor. Donec pulvinar dolor et tortor egestas fermentum sit amet non quam.</p>
+			
+			</div>
+			
 		</div>
 
 	</section>
