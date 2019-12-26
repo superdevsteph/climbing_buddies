@@ -6,6 +6,7 @@ import javax.sql.DataSource;
  
 import org.hibernate.SessionFactory;
 import fr.ocr.climbing.dao.UserDAO;
+import fr.ocr.climbing.dao.impl.TopoDAOImpl;
 import fr.ocr.climbing.dao.impl.UserDAOImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -96,6 +97,12 @@ public class ApplicationContextConfig {
  @Bean(name = "userDAO")
  public UserDAO getUserDAO() {
      return new UserDAOImpl();
+ }
+ 
+ 
+ @Bean(name = "topoDAO")
+ public TopoDAOImpl getTopoDAO() {
+     return new TopoDAOImpl();
  }
  
 }

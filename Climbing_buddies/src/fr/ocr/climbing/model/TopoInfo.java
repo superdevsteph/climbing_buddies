@@ -1,5 +1,7 @@
 package fr.ocr.climbing.model;
 
+import java.util.Date;
+
 public class TopoInfo {
  
 	private Long id; 
@@ -10,7 +12,7 @@ public class TopoInfo {
 	private int nbVoies; 
 	private boolean disponible; 
 	private String description; 
-	private Long datePublication;
+	private Date datePublication;
  
     public TopoInfo() {
  
@@ -20,8 +22,7 @@ public class TopoInfo {
 
 
 	public TopoInfo(Long id, String nom, String region, int nbSites, int nbSecteurs, int nbVoies, boolean disponible,
-			String description, Long datePublication) {
-		super();
+			String description, Date datePublication) {
 		this.id = id;
 		this.nom = nom;
 		this.region = region;
@@ -148,14 +149,14 @@ public class TopoInfo {
 
 
 
-	public Long getDatePublication() {
+	public Date getDatePublication() {
 		return datePublication;
 	}
 
 
 
 
-	public void setDatePublication(Long datePublication) {
+	public void setDatePublication(Date datePublication) {
 		this.datePublication = datePublication;
 	}
 

@@ -5,6 +5,9 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+
  
  
 @Configuration
@@ -25,5 +28,11 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-  
+ 
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/login").setViewName("login");
+		registry.addViewController("/welcome").setViewName("welcome");
+		registry.addViewController("/").setViewName("login");
+	}
 }

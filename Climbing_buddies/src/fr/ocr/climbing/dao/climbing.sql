@@ -81,7 +81,7 @@ CREATE TABLE tb_topo (
 	topo_image VARCHAR(100),
 	topo_dateCreation TIMESTAMP,
 	topo_lastUpdate TIMESTAMP,
-	topo_publication boolean
+	topo_publication DATETIME,
 );
 
 INSERT INTO `climbing_buddy`.`tb_topo` (`topo_id`, `topo_nom`, `topo_region`, `topo_nbSites`, `topo_nbSecteurs`, `topo_nbVoies`, `topo_disponible`, `topo_description`, `topo_user_fk_id`) VALUES ('1', 'Topo1', 'bla', '4', '4564', '4564', '0', 'premier topo', '1');

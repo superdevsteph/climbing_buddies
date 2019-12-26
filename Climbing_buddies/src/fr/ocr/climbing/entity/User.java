@@ -3,8 +3,12 @@ package fr.ocr.climbing.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
  
 @Entity
@@ -18,8 +22,7 @@ public class User implements Serializable {
    private String login;
    private String password;
    private String cotation;
-   private Set<Role> roles;
-   
+    
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY )
    @Column(name = "user_id", length = 50, nullable = false)
@@ -77,13 +80,15 @@ public class User implements Serializable {
    public void setCotation(String cotation) {
        this.cotation = cotation;
    }
+   /*
    @ManyToMany
    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-   public Set<Role> getRoles() {
+   public Set<Role> getRole() {
        return roles;
    }
 
-   public void setRoles(Set<Role> roles) {
+   public void setRole(Set<Role> roles) {
        this.roles = roles;
    }
+*/
 }

@@ -76,19 +76,26 @@
 
 				<div class="container">
 					<div class="row">
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/home" class="btn btn-primary btn-lg active" role="button">Accueil</a>
 						</div>
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/login" class="btn btn-primary btn-lg active" role="button">Login</a>
 						</div>
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/registration" class="btn btn-primary btn-lg active" role="button">Créer
 								un compte</a>
 						</div>
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/userList" class="btn btn-primary btn-lg active" role="button">Liste
 								des utilisateurs</a>
+						</div>
+											
+							<div class="col-2">
+							<a href="${pageContext.request.contextPath}/topoList" class="btn btn-primary btn-lg active" role="button">Les Topos</a>
+						</div>
+						<div class="col-2">
+							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
 						</div>
 	</div>
 	

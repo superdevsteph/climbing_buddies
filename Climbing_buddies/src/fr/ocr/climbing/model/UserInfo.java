@@ -9,7 +9,7 @@ public class UserInfo {
     private String login;
     private String password;
     private String passwordConfirm;
-   private String cotation;
+    private String cotation;
     
  
     public UserInfo() {
@@ -25,16 +25,15 @@ public class UserInfo {
         this.id = id;
         this.name = name;
         this.email = email;
- 
         this.login = login;
         this.password = password;
         this.cotation = cotation;
-      
+        
     }
  
-   
- 
-    public Long getId() {
+
+
+	public Long getId() {
         return id;
     }
  
@@ -90,10 +89,6 @@ public class UserInfo {
         this.cotation = cotation;
     }
 
+   
 
-
-
-
-
- 
 }

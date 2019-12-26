@@ -24,7 +24,7 @@
 		<div class="d-flex h-100 text-center align-items-center">
 			<div class="w-100 text-white">
 				<h1 class="display-3">Les amis de l'escalade</h1>
-				<p class="lead mb-0">Créez votre compte</p>
+				<p class="lead mb-0">Créez un compte</p>
 			</div>
 		</div>
 	</div>
@@ -36,21 +36,27 @@
 
 				<div class="container">
 					<div class="row">
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/home" class="btn btn-primary btn-lg active" role="button">Accueil</a>
 						</div>
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/login" class="btn btn-primary btn-lg active" role="button">Login</a>
 						</div>
 
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/userList" class="btn btn-primary btn-lg active" role="button">Liste
 								des utilisateurs</a>
 						</div>
 
-						<div class="col-3">
-							<a href="${pageContext.request.contextPath}/formUser" class="btn btn-primary btn-lg active" role="button">Créer
-								un utilisateur</a>
+						<div class="col-2">
+							<a href="${pageContext.request.contextPath}/infos" class="btn btn-primary btn-lg active" role="button">A propos de nous</a>
+						</div>
+						
+							<div class="col-2">
+							<a href="${pageContext.request.contextPath}/topoList" class="btn btn-primary btn-lg active" role="button">Les Topos</a>
+						</div>
+						<div class="col-2">
+							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
 						</div>
 						</div>
 		</div>
@@ -65,14 +71,13 @@
 							modelAttribute="userForm">
 					
 					
-							<h2 class="form-signin-heading text-primary">Create your account</h2>
+							<h2 class="form-signin-heading text-primary">Create account</h2>
 
 
 							<table>
 								<tr>
 									<td>Name</td>
-									<td><form:input path="name" />
-									</td>
+									<td><form:input path="name" /></td>
 									<td><form:errors path="name" class="error-message" /></td>
 								</tr>
 								<tr>
@@ -81,7 +86,7 @@
 									<td><form:errors path="password" class="error-message" /></td>
 								</tr>
 								<tr>
-									<td>Confirm your Password</td>
+									<td>Confirm the Password</td>
 									<td><form:input type="password" path="passwordConfirm" /></td>
 									<td><form:errors path="passwordConfirm"
 											class="error-message" /></td>
@@ -108,7 +113,7 @@
 									<td>&nbsp;</td>
 									<td>
 										<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-										<a href="${pageContext.request.contextPath}/login">Cancel</a>
+										<a href="${pageContext.request.contextPath}/home">Cancel</a>
 									</td>
 									<td>&nbsp;</td>
 								</tr>

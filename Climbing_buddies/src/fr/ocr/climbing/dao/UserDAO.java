@@ -16,5 +16,7 @@ public interface UserDAO {
 	public UserInfo findUserInfo(Long id);
 
 	public void deleteUser(Long id);
-
+	
+	public boolean validate(String userName, String password);
+	
 }

@@ -9,7 +9,7 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Liste des utilisateurs</title>
+	<title>Liste des Topos</title>
 	<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
 <header class="h-25 d-inline-block">
@@ -21,7 +21,7 @@
     <div class="d-flex h-100 text-center align-items-center">
       <div class="w-100 text-white">
         <h1 class="display-3">Les amis de l'escalade</h1>
-        <p class="lead mb-0">Liste des utilisateurs</p>
+        <p class="lead mb-0">Liste des Topos</p>
       </div>
     </div>
   </div>
@@ -34,21 +34,31 @@
 
 				<div class="container">
 					<div class="row">
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/home" class="btn btn-primary btn-lg active" role="button">Accueil</a>
 						</div>
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/login" class="btn btn-primary btn-lg active" role="button">Login</a>
 						</div>
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/registration" class="btn btn-primary btn-lg active" role="button">Créer
 								un compte</a>
 						</div>
 						
-						<div class="col-3">
-							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Créer
+						<div class="col-2">
+							<a href="${pageContext.request.contextPath}/registration" class="btn btn-primary btn-lg active" role="button">Créer
 								un utilisateur</a>
 						</div>
+						
+						<div class="col-2">
+							<a href="${pageContext.request.contextPath}/infos" class="btn btn-primary btn-lg active" role="button">A propos de nous</a>
+						</div>
+						<div class="col-2">
+							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
+						</div>
+						
+					
+						
 <br/>
  
  

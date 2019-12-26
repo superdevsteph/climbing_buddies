@@ -35,25 +35,32 @@
 	<section class="my-5">
 		<div class="container">
 			<div class="row" >
-				<div class="col-3">
+				<div class="col-2">
 					<a href="${pageContext.request.contextPath}/home" class="btn btn-primary btn-lg active" role="button">Accueil</a>
 				</div>
 
-				<div class="col-3">
+				<div class="col-2">
 					<a href="${pageContext.request.contextPath}/registration" class="btn btn-primary btn-lg active" role="button">Créer
 						un compte</a>
 				</div>
-				<div class="col-3">
+				<div class="col-2">
 					<a href="${pageContext.request.contextPath}/infos" class="btn btn-primary btn-lg active" role="button">Nous
 						contacter</a>
 				</div>
-				<div class="col-3">
+				<div class="col-2">
 					<a href="${pageContext.request.contextPath}/infos" class="btn btn-primary btn-lg active" role="button">A propos de
 						nous</a>
+							</div>
+							<div class="col-2">
+							<a href="${pageContext.request.contextPath}/topoList" class="btn btn-primary btn-lg active" role="button">Les Topos</a>
+						</div>
+						<div class="col-2">
+							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
+						</div>
 				</div>
 
 			</div>
-		</div>
+		
 	</section>
 	<section class="my-5 ">
 		<div class="container">
@@ -64,8 +71,8 @@
 
 					<div class="form-group ${error != null ? 'has-error' : ''}">
 						<span>${message}</span> <input name="username" type="text"
-							class="form-control" placeholder="Username" /> <input
-							name="password" type="password" class="form-control"
+							class="form-control error-message" placeholder="Username" /> <input
+							name="password" type="password" class="form-control error-message"
 							placeholder="Password" /> <span>${error}</span> <input
 							type="hidden" name="${_csrf.parameterName}"
 							value="${_csrf.token}" />

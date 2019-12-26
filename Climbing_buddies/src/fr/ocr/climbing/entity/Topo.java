@@ -2,6 +2,7 @@ package fr.ocr.climbing.entity;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,7 +28,7 @@ public class Topo implements Serializable {
 	private int nbVoies; 
 	private boolean disponible; 
 	private String description; 
-	private Long datePublication;
+	private Date datePublication;
 	//private Long userId;
 	
 
@@ -114,12 +115,12 @@ public class Topo implements Serializable {
 	}
 
 	@Column(name = "topo_publication", length = 50, nullable = false)
-	public Long getDatePublication() {
+	public Date getDatePublication() {
 		return datePublication;
 	}
 
 
-	public void setDatePublication(Long datePublication) {
+	public void setDatePublication(Date datePublication) {
 		this.datePublication = datePublication;
 	} 
 /*

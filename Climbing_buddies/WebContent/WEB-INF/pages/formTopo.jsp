@@ -8,7 +8,7 @@
 <html>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Créer un utilisateur</title>
+	<title>Ajouter un Topo</title>
 	<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
 <header class="h-25 d-inline-block">
@@ -36,25 +36,35 @@
 
 				<div class="container">
 					<div class="row">
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/home" class="btn btn-primary btn-lg active" role="button">Accueil</a>
 						</div>
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/login" class="btn btn-primary btn-lg active" role="button">Login</a>
 						</div>
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/registration" class="btn btn-primary btn-lg active" role="button">Créer
 								un compte</a>
 						</div>
-						<div class="col-3">
+						<div class="col-2">
 							<a href="${pageContext.request.contextPath}/userList" class="btn btn-primary btn-lg active" role="button">Liste
 								des utilisateurs</a>
+								</div>	
+						<div class="col-2">
+							<a href="${pageContext.request.contextPath}/infos" class="btn btn-primary btn-lg active" role="button">A propos de nous</a>
+						</div>
+						
+							<div class="col-2">
+							<a href="${pageContext.request.contextPath}/topoList" class="btn btn-primary btn-lg active" role="button">Les Topos</a>
+						</div>
+						
 						</div>
 	</div>
 
 						<form:form class="my-5 center_div col-6" action="saveTopo" method="POST"
-							modelAttribute="topoForm">
-					<h3>Ajouter un Topo</h3>
+							modelAttribute="userForm">
+					
+						<h2 class="form-signin-heading text-primary">Ajouter un Topo</h2>
 
 						
 							<table>
@@ -93,7 +103,7 @@
 								</tr>
 								<tr>
 									<td>Date de publication</td>
-									<td><form:input path="datePublication" /></td>
+									<td><form:input type="date" path="datePublication" /></td>
 									<td><form:errors path="datePublication" class="error-message" /></td>
 								</tr>
 								
