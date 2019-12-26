@@ -71,7 +71,7 @@
 							modelAttribute="userForm">
 					
 					
-							<h2 class="form-signin-heading text-primary">Create account</h2>
+							<h2 class="form-signin-heading text-primary">Créer un compte</h2>
 
 
 							<table>
@@ -113,7 +113,7 @@
 									<td>&nbsp;</td>
 									<td>
 										<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-										<a href="${pageContext.request.contextPath}/home">Cancel</a>
+										<a href="${pageContext.request.contextPath}/login">Cancel</a>
 									</td>
 									<td>&nbsp;</td>
 								</tr>

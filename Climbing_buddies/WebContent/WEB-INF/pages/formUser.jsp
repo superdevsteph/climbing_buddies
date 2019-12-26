@@ -71,18 +71,18 @@
 							modelAttribute="userForm">
 					
 					
-							<h2 class="form-signin-heading text-primary">Create account</h2>
+							<h2 class="form-signin-heading text-primary">Ajouter un utilisateur</h2>
 
 
 							<table>
 								<tr>
 									<td>Name</td>
-									<td><form:input path="name" /></td>
+									<td><form:input path="name" required="required"/></td>
 									<td><form:errors path="name" class="error-message" /></td>
 								</tr>
 								<tr>
 									<td>Password</td>
-									<td><form:input type="password" path="password" /></td>
+									<td><form:input type="password" path="password" required="required" /></td>
 									<td><form:errors path="password" class="error-message" /></td>
 								</tr>
 								<tr>
@@ -93,19 +93,19 @@
 								</tr>
 								<tr>
 									<td>Email</td>
-									<td><form:input path="email" /></td>
+									<td><form:input path="email" required="required"/></td>
 									<td><form:errors path="email" class="error-message" /></td>
 								</tr>
 								<tr>
 									<td>Login</td>
-									<td><form:input path="login" /></td>
+									<td><form:input path="login" required="required"/></td>
 									<td><form:errors path="login" class="error-message" /></td>
 
 								</tr>
 
 								<tr>
 									<td>Cotation</td>
-									<td><form:input path="cotation" /></td>
+									<td><form:input path="cotation" required="required"/></td>
 									<td><form:errors path="cotation" class="error-message" /></td>
 								</tr>
 
@@ -113,7 +113,7 @@
 									<td>&nbsp;</td>
 									<td>
 										<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-										<a href="${pageContext.request.contextPath}/home">Cancel</a>
+										<a href="${pageContext.request.contextPath}/userList">Cancel</a>
 									</td>
 									<td>&nbsp;</td>
 								</tr>
