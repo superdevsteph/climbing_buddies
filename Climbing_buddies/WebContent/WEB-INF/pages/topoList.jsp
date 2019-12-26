@@ -29,6 +29,7 @@
 <body>
 
 <section class="my-5">
+
 		<div class="container-fluid">
 			<div class="row">
 
@@ -63,6 +64,9 @@
  
  
 <section class="my-5 center_div">
+ <a href="${pageContext.request.contextPath}/formTopo">Ajouter un Topo</a>
+ 
+<br/>
 <table border="1">
  <tr>
    <th>Nom</th>

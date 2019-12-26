@@ -6,7 +6,6 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -49,7 +48,6 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public void saveUser(UserInfo UserInfo) {
-		Transaction transaction = null;
 		Long id = UserInfo.getId();
 		User User = null;
 		if (id != null) {
@@ -74,20 +72,9 @@ public class UserDAOImpl implements UserDAO {
 			session.persist(User);
 		}
 		
-		try (Session session = sessionFactory.openSession()) {
-            // start a transaction
-            transaction = session.beginTransaction();
-            // save the student object
-            session.save(User);
-            // commit transaction
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
+	
 	}
+
 
 	@Override
 	public void deleteUser(Long id) {
@@ -97,31 +84,6 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
-@Override
-    public boolean validate(String userName, String password) {
-
-        Transaction transaction = null;
-        User user = null;
-        try (Session session = sessionFactory.openSession()) {
-            // start a transaction
-            transaction = session.beginTransaction();
-            // get an user object
-            user = (User) session.createQuery("FROM User U WHERE U.userName = :userName").setParameter("userName", userName)
-                .uniqueResult();
-
-            if (user != null && user.getPassword().equals(password)) {
-                return true;
-            }
-            // commit transaction
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
-        return false;
-    }
 		
 	}
 

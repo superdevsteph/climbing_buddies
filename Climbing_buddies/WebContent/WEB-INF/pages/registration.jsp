@@ -77,13 +77,13 @@
 							<table>
 								<tr>
 									<td>Name</td>
-									<td><form:input path="name" /></td>
-									<td><form:errors path="name" class="error-message" /></td>
+									<td><form:input path="name"  required="required" /></td>
+									<td><form:errors path="name" /></td>
 								</tr>
 								<tr>
 									<td>Password</td>
-									<td><form:input type="password" path="password" /></td>
-									<td><form:errors path="password" class="error-message" /></td>
+									<td><form:input type="password" path="password" required="required"/></td>
+									<td><form:errors path="password" /></td>
 								</tr>
 								<tr>
 									<td>Confirm the Password</td>
@@ -93,20 +93,20 @@
 								</tr>
 								<tr>
 									<td>Email</td>
-									<td><form:input path="email" /></td>
-									<td><form:errors path="email" class="error-message" /></td>
+									<td><form:input path="email" required="required"/></td>
+									<td><form:errors path="email" /></td>
 								</tr>
 								<tr>
 									<td>Login</td>
-									<td><form:input path="login" /></td>
-									<td><form:errors path="login" class="error-message" /></td>
+									<td><form:input path="login" required="required"/></td>
+									<td><form:errors path="login"  /></td>
 
 								</tr>
 
 								<tr>
 									<td>Cotation</td>
-									<td><form:input path="cotation" /></td>
-									<td><form:errors path="cotation" class="error-message" /></td>
+									<td><form:input path="cotation" required="required"/></td>
+									<td><form:errors path="cotation"  /></td>
 								</tr>
 
 								<tr>

@@ -77,7 +77,7 @@ public class ApplicationContextConfig {
       
  
      LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
-     factoryBean.setPackagesToScan(new String[] { "fr.ocr.climbing" });
+     factoryBean.setPackagesToScan(new String[] { "fr.ocr.climbing.entity" });
      factoryBean.setDataSource(dataSource);
      factoryBean.setHibernateProperties(properties);
      factoryBean.afterPropertiesSet();

@@ -27,7 +27,10 @@
   </div>
 </header>
 <body>
+ 
+ 
 
+ 
 <section class="my-5">
 		<div class="container-fluid">
 			<div class="row">
@@ -57,8 +60,10 @@
 						</div>
 <br/>
  
- 
 <section class="my-5 center_div">
+ <a href="${pageContext.request.contextPath}/formUser">Ajouter un utilisateur</a>
+ 
+<br/>
 <table border="1">
  <tr>
    <th>Name</th>
