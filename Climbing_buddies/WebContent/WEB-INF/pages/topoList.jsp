@@ -46,7 +46,7 @@
 						</div>
 						
 						<div class="col-3">
-							<a href="${pageContext.request.contextPath}/formUser" class="btn btn-primary btn-lg active" role="button">Créer
+							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Créer
 								un utilisateur</a>
 						</div>
 <br/>
@@ -55,24 +55,29 @@
 <section class="my-5 center_div">
 <table border="1">
  <tr>
-   <th>Name</th>
-   <th>Login</th>
-   <th>Password</th>
-   <th>Email</th>
-   <th>Cotation</th>
+   <th>Nom</th>
+   <th>Region</th>
+   <th>Nombre de sites</th>
+   <th>Nombre de secteurs</th>
+   <th>Nombre de voies</th>
+   <th>Description</th>
+   <th>Date de publication</th>
+  
    <th>Edit</th>
    <th>Delete</th>
  </tr>
- <c:forEach items="${userInfos}" var="info">
+ <c:forEach items="${topoInfos}" var="info">
  
  <tr>
-   <td> ${info.name}  </td>
-   <td> ${info.login}  </td>
-   <td> ${info.password} </td>
-   <td> ${info.email} </td>
-   <td> ${info.cotation} </td>
-   <td> <a href="deleteUser?id=${info.id}">Delete</a> </td>
-   <td> <a href="editUser?id=${info.id}">Edit</a> </td>
+   <td> ${info.nom}  </td>
+   <td> ${info.region}  </td>
+   <td> ${info.nbSites} </td>
+     <td> ${info.nbSecteurs} </td>
+   <td> ${info.nbVoies} </td>
+   <td> ${info.description} </td>
+     <td> ${info.datePublication} </td>
+   <td> <a href="deleteTopo?id=${info.id}">Delete</a> </td>
+   <td> <a href="editTopo?id=${info.id}">Edit</a> </td>
  </tr>    
  </c:forEach>
 </table>

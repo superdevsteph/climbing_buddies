@@ -12,9 +12,9 @@
 	<title>Créer un compte</title>
 	<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
-<header>
+<header class="h-25 d-inline-block">
 	<div class="overlay"></div>
-	<video playsinline="playsinline" autoplay="autoplay" muted="muted"
+	<video autoplay="autoplay" muted="muted"
 		loop="loop">
 		<source
 			src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"

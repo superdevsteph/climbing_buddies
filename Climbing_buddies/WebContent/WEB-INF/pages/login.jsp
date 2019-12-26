@@ -14,9 +14,9 @@
 <title>Login</title>
 <style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
-<header>
+<header class="h-25 d-inline-block">
 	<div class="overlay"></div>
-	<video playsinline="playsinline" autoplay="autoplay" muted="muted"
+	<video  autoplay="autoplay" muted="muted"
 		loop="loop">
 		<source
 			src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
@@ -33,7 +33,7 @@
 </header>
 <body>
 	<section class="my-5">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row" >
 				<div class="col-3">
 					<a href="${pageContext.request.contextPath}/home" class="btn btn-primary btn-lg active" role="button">Accueil</a>

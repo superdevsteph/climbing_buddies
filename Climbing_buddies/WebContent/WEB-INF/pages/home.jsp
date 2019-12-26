@@ -1,16 +1,20 @@
-<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html>
-
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Les amis de l'escalade</title>
 	<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
-<header>
-	
-	<video playsinline="playsinline" autoplay="autoplay" muted="muted"
+<header class="h-25 d-inline-block">
+	<div class="overlay"></div>
+	<video  autoplay="autoplay" muted="muted"
 		loop="loop">
 		<source
 			src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
@@ -47,13 +51,20 @@
 						<div class="col-3">
 							<a href="${pageContext.request.contextPath}/infos" class="btn btn-primary btn-lg active" role="button">A propos de nous</a>
 						</div>
+						
+							<div class="col-3">
+							<a href="${pageContext.request.contextPath}/topoList" class="btn btn-primary btn-lg active" role="button">Les Topos</a>
+						</div>
+						<div class="col-3">
+							<a href="${pageContext.request.contextPath}/formTopo" class="btn btn-primary btn-lg active" role="button">Ajouter un Topo</a>
+						</div>
 
 					</div>
 				</div>
 
 			</div>
 			
-			<div class="my-5 container">
+			<div class="my-5 container text-justify">
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta imperdiet ipsum, at sagittis leo hendrerit tempor. Nullam rutrum consectetur velit, sit amet auctor mi commodo eget. Etiam et augue felis. Nunc eros massa, mollis non consequat lobortis, accumsan vel nulla. Morbi id nunc ut neque mattis maximus vitae nec dui. Donec eu consectetur sapien. Aenean pulvinar ante vitae condimentum imperdiet. Duis sit amet fermentum nunc, at ornare nibh.
 

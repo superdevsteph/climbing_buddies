@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import fr.ocr.climbing.dao.TopoDAO;
 import fr.ocr.climbing.dao.UserDAO;
+import fr.ocr.climbing.model.TopoInfo;
 import fr.ocr.climbing.model.UserInfo;
-import fr.ocr.climbing.validator.UserValidator;
+import fr.ocr.climbing.validator.FormValidator;
 
 @Controller
 // Enable Hibernate Transaction.
@@ -30,9 +32,15 @@ public class MyController {
 
 	@Autowired
 	private UserDAO userDAO;
+	
+	@Autowired
+	private TopoDAO topoDAO;
+
 
 	@Autowired
-	private UserValidator userValidator;
+	private FormValidator userValidator;
+	
+
 
 	@RequestMapping("/")
 	public String homePage(Model model) {
@@ -46,6 +54,20 @@ public class MyController {
 		return "home";
 	}
 
+	@RequestMapping("/infos")
+	public String infos(Model model) {
+
+		return "infos";
+	}
+	
+	@RequestMapping("/topoList")
+	public String topoList(Model model) {
+		List<TopoInfo> list = topoDAO.listTopoInfos();
+		model.addAttribute("topoInfos", list);
+		return "topoList";
+	}
+	
+	
 	
 	@RequestMapping("/userList")
 	public String userList(Model model) {
@@ -214,5 +236,76 @@ public class MyController {
 	       return "redirect:/welcome";
 	 
 }
+	   
+	   
+	   
+	   
+	   private String formTopo(Model model, TopoInfo topoInfo) {
+			model.addAttribute("topoForm", topoInfo);
+
+			if (topoInfo.getId() == null) {
+				model.addAttribute("formTitle", "Create Topo");
+			} else {
+				model.addAttribute("formTitle", "Edit Topo");
+			}
+
+			return "formTopo";
+		}
+
+		@RequestMapping("/formTopo")
+		public String createTopo(Model model) {
+
+			TopoInfo topoInfo = new TopoInfo();
+
+			return this.formTopo(model, topoInfo);
+		}
+
+		@RequestMapping("/editTopo")
+		public String editTopo(Model model, @RequestParam("id") Long id) {
+			TopoInfo topoInfo = null;
+			if (id != 0) {
+				topoInfo = this.topoDAO.findTopoInfo(id);
+			}
+			if (topoInfo == null) {
+				return "redirect:/topoList";
+			}
+
+			return this.formTopo(model, topoInfo);
+		}
+
+		@RequestMapping("/deleteTopo")
+		public String deleteTopo(Model model, @RequestParam("id") Long id) {
+			if (id != 0) {
+				this.topoDAO.deleteTopo(id);
+			}
+			return "redirect:/topoList";
+		}
+
+
+		// Save or update Topo
+		// 1. @ModelAttribute bind form value
+		// 2. @Validated form validator
+		// 3. RedirectAttributes for flash value
+		@RequestMapping(value = "/saveTopo", method = RequestMethod.POST)
+		public String saveTopo(Model model, //
+				@ModelAttribute("topoForm") @Validated TopoInfo topoInfo, //
+				BindingResult result, //
+				final RedirectAttributes redirectAttributes) {
+
+			if (result.hasErrors()) {
+				return this.formTopo(model, topoInfo);
+			}
+
+			this.topoDAO.saveTopo(topoInfo);
+
+			// Important!!: Need @EnableWebMvc
+			// Add message to flash scope
+			redirectAttributes.addFlashAttribute("message", "Save Topo Successful");
+
+			return "redirect:/topoList";
+
+		}
+  
+	   
 
 }

@@ -1,16 +1,19 @@
-<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html>
-
-<head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>User List</title>
 	<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
-<header>
+<header class="h-25 d-inline-block">
 	<div class="overlay"></div>
-	<video playsinline="playsinline" autoplay="autoplay" muted="muted"
+	<video autoplay="autoplay" muted="muted"
 		loop="loop">
 		<source
 			src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"

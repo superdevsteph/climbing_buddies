@@ -23,7 +23,7 @@
 		<div class="d-flex h-100 text-center align-items-center">
 			<div class="w-100 text-white">
 				<h1 class="display-3">Les amis de l'escalade</h1>
-				<p class="lead mb-0">Ajoutez un utilisateur</p>
+				<p class="lead mb-0">Ajoutez un Topo</p>
 			</div>
 		</div>
 	</div>
@@ -52,45 +52,55 @@
 						</div>
 	</div>
 
-						<form:form class="my-5 center_div col-6" action="saveUser" method="POST"
-							modelAttribute="userForm">
-					<h3>${formTitle}</h3>
+						<form:form class="my-5 center_div col-6" action="saveTopo" method="POST"
+							modelAttribute="topoForm">
+					<h3>Ajouter un Topo</h3>
 
-							<form:hidden path="id" />
-
+						
 							<table>
 								<tr>
-									<td>Name</td>
-									<td><form:input path="name" /></td>
-									<td><form:errors path="name" class="error-message" /></td>
+									<td>Nom</td>
+									<td><form:input path="nom" /></td>
+									<td><form:errors path="nom" class="error-message" /></td>
 								</tr>
 								<tr>
-									<td>Password</td>
-									<td><form:input type="password" path="password" /></td>
-									<td><form:errors path="password" class="error-message" /></td>
+									<td>Région</td>
+									<td><form:input  path="region" /></td>
+									<td><form:errors path="region" class="error-message" /></td>
 								</tr>
 								<tr>
-									<td>Email</td>
-									<td><form:input path="email" /></td>
-									<td><form:errors path="email" class="error-message" /></td>
+									<td>Nombre de sites</td>
+									<td><form:input path="nbSites" /></td>
+									<td><form:errors path="nbSites" class="error-message" /></td>
 								</tr>
 								<tr>
-									<td>Login</td>
-									<td><form:input path="login" /></td>
-									<td><form:errors path="login" class="error-message" /></td>
+									<td>Nombre de secteurs</td>
+									<td><form:input path="nbSecteurs" /></td>
+									<td><form:errors path="nbSecteurs" class="error-message" /></td>
 
 								</tr>
 
 								<tr>
-									<td>Cotation</td>
-									<td><form:input path="cotation" /></td>
-									<td><form:errors path="cotation" class="error-message" /></td>
+									<td>Nombre de voies</td>
+									<td><form:input path="nbVoies" /></td>
+									<td><form:errors path="nbVoies" class="error-message" /></td>
 								</tr>
 
+								<tr>
+									<td>Description</td>
+									<td><form:input path="description" /></td>
+									<td><form:errors path="description" class="error-message" /></td>
+								</tr>
+								<tr>
+									<td>Date de publication</td>
+									<td><form:input path="datePublication" /></td>
+									<td><form:errors path="datePublication" class="error-message" /></td>
+								</tr>
+								
 								<tr>
 									<td>&nbsp;</td>
 									<td><input type="submit" value="Submit" /> <a
-										href="${pageContext.request.contextPath}/userList">Cancel</a>
+										href="${pageContext.request.contextPath}/topoList">Cancel</a>
 									</td>
 									<td>&nbsp;</td>
 								</tr>
