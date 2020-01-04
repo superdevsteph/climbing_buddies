@@ -23,7 +23,7 @@ public class LoginValidator implements Validator {
  
         // Check the fields of UserInfo.
         // (See more in property file: messages/validator.properties)
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "login", "NotEmpty.userForm.login");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotEmpty.userForm.username");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "NotEmpty.userForm.email");
 
     

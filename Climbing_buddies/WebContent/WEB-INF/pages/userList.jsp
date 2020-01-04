@@ -78,7 +78,7 @@
  
  <tr>
    <td> ${info.name}  </td>
-   <td> ${info.login}  </td>
+   <td> ${info.username}  </td>
    <td> ${info.password} </td>
    <td> ${info.email} </td>
    <td> ${info.cotation} </td>

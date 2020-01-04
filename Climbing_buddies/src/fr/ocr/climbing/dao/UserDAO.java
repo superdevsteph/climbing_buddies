@@ -16,6 +16,9 @@ public interface UserDAO {
 	public UserInfo findUserInfo(Long id);
 
 	public void deleteUser(Long id);
+
+	public void saveUser2(UserInfo userInfo);
 	
 	
+
 }

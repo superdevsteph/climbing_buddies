@@ -33,14 +33,14 @@ public class UserDAOImpl implements UserDAO {
 		if (user == null) {
 			return null;
 		}
-		return new UserInfo(user.getId(), user.getName(), user.getEmail(), user.getLogin(), user.getPassword(), user.getCotation());
+		return new UserInfo(user.getId(), user.getName(), user.getEmail(), user.getUsername(), user.getPassword(), user.getCotation());
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<UserInfo> listUserInfos() {
 		String sql = "Select new " + UserInfo.class.getName()//
-				+ "(a.id, a.name, a.email, a.login, a.password,  a.cotation) "//
+				+ "(a.id, a.name, a.email, a.username, a.password, a.cotation) "//
 				+ " from " + User.class.getName() + " a ";
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery(sql);
@@ -60,22 +60,16 @@ public class UserDAOImpl implements UserDAO {
 			
 		}
 		User.setEmail(UserInfo.getEmail());
-		User.setLogin(UserInfo.getLogin());
+		User.setUsername(UserInfo.getUsername());
 		User.setName(UserInfo.getName());
 		User.setPassword(UserInfo.getPassword());
 		User.setCotation(UserInfo.getCotation());
-
-		
 		
 		if (isNew) {
 			Session session = this.sessionFactory.getCurrentSession();
 			session.persist(User);
 		}
-		
-	
 	}
-
-
 	@Override
 	public void deleteUser(Long id) {
 		User User = this.findUser(id);
@@ -83,10 +77,7 @@ public class UserDAOImpl implements UserDAO {
 			this.sessionFactory.getCurrentSession().delete(User);
 		}
 	}
-
-		
+	
 	}
 
 	
-	
- 

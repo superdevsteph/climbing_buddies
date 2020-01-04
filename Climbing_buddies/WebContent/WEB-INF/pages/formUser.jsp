@@ -87,9 +87,8 @@
 								</tr>
 								<tr>
 									<td>Confirm the Password</td>
-									<td><form:input type="password" path="passwordConfirm" /></td>
-									<td><form:errors path="passwordConfirm"
-											class="error-message" /></td>
+									<td><form:input type="password" path="passwordConfirm" required="required"/></td>
+									<td><form:errors path="passwordConfirm" class="error-message" /></td>
 								</tr>
 								<tr>
 									<td>Email</td>
@@ -98,8 +97,8 @@
 								</tr>
 								<tr>
 									<td>Login</td>
-									<td><form:input path="login" required="required"/></td>
-									<td><form:errors path="login" class="error-message" /></td>
+									<td><form:input path="username" required="required"/></td>
+									<td><form:errors path="username" class="error-message" /></td>
 
 								</tr>
 

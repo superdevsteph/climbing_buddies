@@ -6,7 +6,7 @@ public class UserInfo {
     private String name;
     private String email;
  
-    private String login;
+    private String username;
     private String password;
     private String passwordConfirm;
     private String cotation;
@@ -21,11 +21,11 @@ public class UserInfo {
 
 	// Do not change this constructor,
     // it is used in the Hibernate Query
-    public UserInfo(Long id, String name, String email, String login, String password, String cotation) {
+    public UserInfo(Long id, String name, String email, String username, String password, String cotation) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.login = login;
+        this.username = username;
         this.password = password;
         this.cotation = cotation;
         
@@ -57,12 +57,12 @@ public class UserInfo {
         this.email = email;
     }
  
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
  
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
  
     public String getPassword() {

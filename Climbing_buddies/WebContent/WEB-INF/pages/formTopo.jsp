@@ -117,7 +117,7 @@
 							</table>
 						</form:form>
 					</div>
-				</div>
+				
 	
 		
 	</section>

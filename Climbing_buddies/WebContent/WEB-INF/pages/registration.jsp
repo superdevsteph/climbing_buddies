@@ -67,7 +67,7 @@
 		<div class="container">
 			<div class="row">
 			
-			<form:form class="my-5 center_div col-6 form-signin" action="saveUser" method="POST"
+			<form:form class="my-5 center_div col-6 form-signin" action="saveUser2" method="POST"
 							modelAttribute="userForm">
 					
 					
@@ -76,38 +76,28 @@
 
 							<table>
 								<tr>
-									<td>Name</td>
-									<td><form:input path="name"  required="required" /></td>
-									<td><form:errors path="name" /></td>
+									<td>Username</td>
+									<td><form:input path="username" required="required"/></td>
+									<td><form:errors path="username" class="error-message" /></td>
+
 								</tr>
 								<tr>
 									<td>Password</td>
 									<td><form:input type="password" path="password" required="required"/></td>
-									<td><form:errors path="password" /></td>
+									<td><form:errors path="password" class="error-message"/></td>
 								</tr>
 								<tr>
 									<td>Confirm the Password</td>
-									<td><form:input type="password" path="passwordConfirm" /></td>
+									<td><form:input type="password" path="passwordConfirm" required="required" /></td>
 									<td><form:errors path="passwordConfirm"
 											class="error-message" /></td>
 								</tr>
 								<tr>
 									<td>Email</td>
 									<td><form:input path="email" required="required"/></td>
-									<td><form:errors path="email" /></td>
+									<td><form:errors path="email" class="error-message"/></td>
 								</tr>
-								<tr>
-									<td>Login</td>
-									<td><form:input path="login" required="required"/></td>
-									<td><form:errors path="login"  /></td>
-
-								</tr>
-
-								<tr>
-									<td>Cotation</td>
-									<td><form:input path="cotation" required="required"/></td>
-									<td><form:errors path="cotation"  /></td>
-								</tr>
+						
 
 								<tr>
 									<td>&nbsp;</td>

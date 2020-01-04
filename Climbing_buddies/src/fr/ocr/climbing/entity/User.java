@@ -2,15 +2,19 @@ package fr.ocr.climbing.entity;
 
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
- 
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
@@ -19,10 +23,19 @@ public class User implements Serializable {
    private Long id;
    private String name;
    private String email;
-   private String login;
+   private String username;
    private String password;
+  
    private String cotation;
-    
+
+  	   
+			public User() {
+			}
+
+		
+
+		
+   
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY )
    @Column(name = "user_id", length = 50, nullable = false)
@@ -34,7 +47,7 @@ public class User implements Serializable {
        this.id = id;
    }
  
-   @Column(name = "user_name", length = 50, nullable = false)
+   @Column(name = "user_name", unique = true, length = 50, nullable = false)
    public String getName() {
        return name;
    }
@@ -43,13 +56,13 @@ public class User implements Serializable {
        this.name = name;
    }
  
-   @Column(name = "user_login", length = 50, nullable = false)
-   public String getLogin() {
-       return login;
+   @Column(name = "user_username", unique = true, length = 50, nullable = false)
+   public String getUsername() {
+       return username;
    }
  
-   public void setLogin(String login) {
-       this.login = login;
+   public void setUsername(String username) {
+       this.username = username;
    }
  
    @Column(name = "user_password", length = 50, nullable = false)
@@ -80,15 +93,12 @@ public class User implements Serializable {
    public void setCotation(String cotation) {
        this.cotation = cotation;
    }
-   /*
-   @ManyToMany
-   @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-   public Set<Role> getRole() {
-       return roles;
-   }
 
-   public void setRole(Set<Role> roles) {
-       this.roles = roles;
-   }
-*/
-}
+
+   
+	}
+
+
+
+
+	
