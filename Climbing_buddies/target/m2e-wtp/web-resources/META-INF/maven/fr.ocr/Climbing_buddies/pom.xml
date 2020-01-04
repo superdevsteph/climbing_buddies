@@ -9,8 +9,8 @@
    <properties>
    
       <java-version>1.8</java-version>
-      <spring.version>5.0.5.RELEASE</spring.version>
-        <spring-security.version>5.0.6.RELEASE</spring-security.version>
+      <spring.version>4.2.0.RELEASE</spring.version>
+        <spring-security.version>4.0.2.RELEASE</spring-security.version>
         <spring-data-jpa.version>1.8.2.RELEASE</spring-data-jpa.version>
         <hibernate.version>4.3.11.Final</hibernate.version>
         <hibernate-validator.version>5.2.1.Final</hibernate-validator.version>
@@ -45,121 +45,60 @@
       
       <!-- Servlet API -->
       <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-      
-      
-       <!-- Servlet and JSP related dependencies -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>2.3.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp.jstl</groupId>
-            <artifactId>javax.servlet.jsp.jstl-api</artifactId>
-            <version>1.2.1</version>
-        </dependency>
-  
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.1.0</version>
+          <scope>provided</scope>
+      </dependency>
  
+      <!-- Jstl for jsp page -->
+      <!-- http://mvnrepository.com/artifact/javax.servlet/jstl -->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
+      </dependency>
+ 
+ 
+      <!-- JSP API -->
+      <!-- http://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+      <dependency>
+          <groupId>javax.servlet.jsp</groupId>
+          <artifactId>jsp-api</artifactId>
+          <version>2.2</version>
+          <scope>provided</scope>
+      </dependency>
  
       <!-- Spring dependencies -->
       <!-- http://mvnrepository.com/artifact/org.springframework/spring-core -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-core</artifactId>
-          <version>5.0.5.RELEASE</version>
+          <version>4.3.18.RELEASE</version>
       </dependency>
  
       <!-- http://mvnrepository.com/artifact/org.springframework/spring-web -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-web</artifactId>
-          <version>5.0.5.RELEASE</version>
+          <version>4.3.17.RELEASE</version>
       </dependency>
  
       <!-- http://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-webmvc</artifactId>
-          <version>5.0.5.RELEASE</version>
+          <version>4.3.17.RELEASE</version>
       </dependency>
  
       <!-- http://mvnrepository.com/artifact/org.springframework/spring-orm -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-orm</artifactId>
-          <version>5.0.5.RELEASE</version>
+          <version>4.3.17.RELEASE</version>
       </dependency>
  
-  <!-- Spring dependencies -->
-  
-  <dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-core</artifactId>
-    <version>5.0.6.RELEASE</version>
-</dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>5.0.6.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>5.0.6.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-crypto</artifactId>
-            <version>5.0.6.RELEASE</version>
-        </dependency>
-     
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>5.0.5.RELEASE</version>
-        </dependency>
-       
-       
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>${hibernate-validator.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>${spring-data-jpa.version}</version>
-        </dependency>
-
-   
-
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
-        </dependency>
-       
-       
-        <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-            <version>1.1.2</version>
-        </dependency>
-        <!-- For datasource configuration -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-dbcp2</artifactId>
-            <version>2.1.1</version>
-        </dependency>
-       
       <!-- Hibernate -->
       <!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
       <dependency>
@@ -200,9 +139,47 @@
     <version>1.5.0</version>
 </dependency>
 
-       
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring-security.version}</version>
+        </dependency>
 
-       
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring-security.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data-jpa.version}</version>
+        </dependency>
+
+            <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>${commons-dbcp.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
 </dependencies>
 
   <build>

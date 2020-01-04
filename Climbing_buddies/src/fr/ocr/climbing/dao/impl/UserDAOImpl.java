@@ -77,6 +77,28 @@ public class UserDAOImpl implements UserDAO {
 			this.sessionFactory.getCurrentSession().delete(User);
 		}
 	}
+
+	public void saveUser2(UserInfo UserInfo) {
+		Long id = UserInfo.getId();
+		User User = null;
+		if (id != null) {
+			User = this.findUser(id);
+		}
+		boolean isNew = false;
+		if (User == null) {
+			isNew = true;
+			User = new User();
+			
+		}
+		User.setUsername(UserInfo.getUsername());
+		User.setPassword(UserInfo.getPassword());
+		User.setEmail(UserInfo.getEmail());
+		
+		if (isNew) {
+			Session session = this.sessionFactory.getCurrentSession();
+			session.persist(User);
+		}
+	}
 	
 	}
 

@@ -67,7 +67,7 @@ public class MyController {
 		return "infos";
 	}
 
-	@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 
 	public String username(Model model, String error, String logout) {
 		if (error != null)
@@ -327,7 +327,7 @@ public class MyController {
 			// Add message to flash scope
 			redirectAttributes.addFlashAttribute("message", "Save User Successful");
 
-			return "redirect:/userList";
+			return "redirect:/welcome";
 
 		}
 	

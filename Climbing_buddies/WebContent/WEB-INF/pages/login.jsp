@@ -81,14 +81,14 @@
                         <c:url var="loginUrl" value="/login" />
                       
                         
-                      <form method="POST" action="${contextPath}/login" class="form-signin">
+                      <form method="POST" action="welcome" class="form-signin">
         <h2 class="form-heading">Log in</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
             <input name="username" type="text" class="form-control" placeholder="Username"
-                  />
-            <input name="password" type="password" class="form-control" placeholder="Password"/>
+             required="required"     />
+            <input name="password" type="password" class="form-control" placeholder="Password"required="required"/>
             <span>${error}</span>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
